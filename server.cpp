@@ -21,20 +21,13 @@ const int PORT = 3331;
 int main(int argc, char* argv[])
 {
   // cree le TCPServer
+  Administrator admin;
+  
   auto* server =
   new TCPServer( [&](std::string const& request, std::string& response) {
-    Administrator admin;
-    response = "Available commands:\n"
-           "1. create photo <name> <filepath> <xdim> <ydim>\n"
-           "2. create video <name> <filepath> <duration>\n"
-           "3. create film <name> <filepath> <duration> <nbChapters> <chapters...>\n"
-           "4. create group <name>\n"
-           "5. search object <name>\n"
-           "6. search group <name>\n"
-           "7. display <name>\n"
-           "8. play <name>\n"
-           "9. search <query>\n";
-           
+    
+    
+
     // the request sent by the client to the server
     std::cout << "request: " << request << std::endl;
 
@@ -118,7 +111,17 @@ int main(int argc, char* argv[])
       response = "Searching for: " + query;
     }
     else{
-      response = "Unknown command" + request;
+      response = "Unknown command\n\n"
+        "Available commands:\n"
+           "1. create photo <name> <filepath> <xdim> <ydim>\n"
+           "2. create video <name> <filepath> <duration>\n"
+           "3. create film <name> <filepath> <duration> <nbChapters> <chapters...>\n"
+           "4. create group <name>\n"
+           "5. search object <name>\n"
+           "6. search group <name>\n"
+           "7. display <name>\n"
+           "8. play <name>\n"
+           "9. search <query>\n";
     }
     // return false would close the connecytion with the client
     return true;
