@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
       // Process the add query
       response = "Playing: " + query;
     }
-    if (request.rfind("search ", 0) == 0) {
+    else if (request.rfind("search ", 0) == 0) {
       std::string query = request.substr(7);
       // Process the search query
       response = "Searching for: " + query;
