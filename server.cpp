@@ -22,9 +22,19 @@ int main(int argc, char* argv[])
     // the request sent by the client to the server
     std::cout << "request: " << request << std::endl;
 
-    // the response that the server sends back to the client
-    response = "RECEIVED: " + request;
-
+    if (request.rfind("search ", 0) == 0) {
+      std::string query = request.substr(7);
+      // Process the search query
+      response = "Searching for: " + query;
+    }
+    if (request.rfind("play ", 0) == 0) {
+      std::string query = request.substr(5);
+      // Process the add query
+      response = "Playing: " + query;
+    }
+    else{
+      response = "Unknown command";
+    }
     // return false would close the connecytion with the client
     return true;
   });
