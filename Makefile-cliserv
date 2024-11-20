@@ -36,7 +36,7 @@ CXX=c++
 #   -std=c++11 pour C++11
 # Example: CXXFLAGS= -std=c++11 -Wall -O -I/usr/local/qt/include
 #
-CXXFLAGS = -std=c++11 -Wall -g 
+CXXFLAGS = -std=c++11 -Wall -g -I/usr/local/qt/include -I/usr/local/include -I/usr/inlcude
 
 #
 # Options de l'editeur de liens
@@ -47,7 +47,7 @@ LDFLAGS=
 # Librairies a utiliser
 # Example: LDLIBS = -L/usr/local/qt/lib -lqt
 #
-LDLIBS= -lpthread -lWs2_32
+LDLIBS= -lpthread
 
 
 ##########################################
