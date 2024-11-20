@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 #include "tcpserver.h"
 #include "Administrator.h"
 #include "Film.h"
@@ -43,7 +44,9 @@ int main(int argc, char* argv[])
 
       std::ostringstream oss;
       admin.display(name, oss);
-      response = oss.str();
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
       
     }
     else if (request.rfind("create video", 0) == 0){
@@ -54,9 +57,12 @@ int main(int argc, char* argv[])
       iss >> name >> filepath >> duration;
       response = "Creating video: " + name;
       admin.createVideo(name, filepath, duration);
+      
       std::ostringstream oss;
       admin.display(name, oss);
-      response = oss.str();
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
     }
     else if (request.rfind("create film", 0) == 0){
       std::string query = request.substr(12);
@@ -70,9 +76,12 @@ int main(int argc, char* argv[])
       }
       response = "Creating film: " + name;
       admin.createFilm(name, filepath, duration, chapters, nbChapters);
+      
       std::ostringstream oss;
       admin.display(name, oss);
-      response = oss.str();
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
     }
     else if (request.rfind("create group", 0) == 0){
       std::string query = request.substr(13);
@@ -81,9 +90,12 @@ int main(int argc, char* argv[])
       iss >> name;
       response = "Creating group: " + name;
       admin.createGroup(name);
+      
       std::ostringstream oss;
       admin.display(name, oss);
-      response = oss.str();
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
     }
     else if (request.rfind("search object", 0) == 0){
       std::string query = request.substr(14);
@@ -107,9 +119,12 @@ int main(int argc, char* argv[])
       std::string name;
       iss >> name;
       response = "Displaying: " + name;
+      
       std::ostringstream oss;
       admin.display(name, oss);
-      response = oss.str();
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
     }
     else if (request.rfind("play ", 0) == 0) {
       std::string query = request.substr(5);
@@ -122,17 +137,17 @@ int main(int argc, char* argv[])
       response = "Searching for: " + query;
     }
     else{
-      response = "Unknown command\n\n"
-        "Available commands:\n"
-           "1. create photo <name> <filepath> <xdim> <ydim>\n"
-           "2. create video <name> <filepath> <duration>\n"
-           "3. create film <name> <filepath> <duration> <nbChapters> <chapters...>\n"
-           "4. create group <name>\n"
-           "5. search object <name>\n"
-           "6. search group <name>\n"
-           "7. display <name>\n"
-           "8. play <name>\n"
-           "9. search <query>\n";
+      response = "Unknown command ... "
+        "Available commands: "
+           "1. create photo <name> <filepath> <xdim> <ydim> ; "
+           "2. create video <name> <filepath> <duration> ; "
+           "3. create film <name> <filepath> <duration> <nbChapters> <chapters...> ; "
+           "4. create group <name> ; "
+           "5. search object <name> ; "
+           "6. search group <name> ; "
+           "7. display <name> ; "
+           "8. play <name> ; "
+           "9. search <query> ; ";
     }
     // return false would close the connecytion with the client
     return true;
