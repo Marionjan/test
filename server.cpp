@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
       response = "Playing: " + query;
     }
     else{
-      response = "Unknown command";
+      response = "Unknown command" + request;
     }
     // return false would close the connecytion with the client
     return true;
