@@ -15,6 +15,8 @@ public:
     Film(std::string name, std::string pathname, int duration, int *chapters, int nbChapters);
 
     virtual ~Film();
+    void writeToFile(std::ofstream& out) const override;
+    Film readFromFile(std::ifstream& in) ;
 
     void setChapters(int* chapters, int nbChapters);
 

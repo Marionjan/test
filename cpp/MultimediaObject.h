@@ -18,6 +18,8 @@ protected:
     
     MultimediaObject(std::string name, std::string pathname);
 
+    virtual void writeToFile(std::ofstream& out) const ;
+
     virtual ~MultimediaObject();
 
 public:

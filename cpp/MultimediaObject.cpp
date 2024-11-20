@@ -4,6 +4,7 @@
 #include "MultimediaObject.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 MultimediaObject:: MultimediaObject() {
     name = " ";
@@ -11,9 +12,16 @@ MultimediaObject:: MultimediaObject() {
 }
 MultimediaObject::MultimediaObject(std::string name, std::string pathname) : name(name), pathname(pathname) {};
 
+
+
 MultimediaObject::~MultimediaObject(){
     std::cerr<<"Adieu undefined object " + this->getName() + "\n"<<std::endl;
 };
+
+void MultimediaObject::writeToFile(std::ofstream& out) const {
+    out << "Name: " << this->getName() << std::endl;
+    out << "Pathname: " << this->getPathname() << std::endl;
+}
 
 std::string MultimediaObject::getName() const{
     return name; 

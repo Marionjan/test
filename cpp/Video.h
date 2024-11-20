@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "MultimediaObject.h"
 
 class Video : public MultimediaObject {
@@ -27,6 +28,18 @@ public:
         std::cerr<<"Adieu video " + this->getName() + "\n"<<std::endl;
     };
     
+    void writeToFile(std::ofstream& out) const override{
+        MultimediaObject::writeToFile(out);
+        out << "Duration: " << this->getDuration() << std::endl;
+    };
+
+    Video readFromFile(std::ifstream& in) {
+        std::string name, pathname;
+        int duration;
+        in >> name >> pathname >> duration;
+        return Video(name, pathname, duration);
+    };
+
     int getDuration() const{ 
         return duration; 
     };

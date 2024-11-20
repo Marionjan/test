@@ -4,6 +4,8 @@
 #include <map>
 #include <string>
 #include <memory>
+#include <iostream>
+#include <fstream>
 #include "MultimediaObject.h"
 #include "Group.h"
 #include "Video.h"
@@ -21,6 +23,39 @@ Administrator::Administrator(MultimediaTable multimediaTable, GroupTable groupTa
     std::cerr << "New Administrator created" << std::endl;
     mTable = multimediaTable;
     gTable = groupTable;
+}
+
+void Administrator::writeToFile(const std::string& name, std::ofstream& out) const {
+    auto obj = mTable.find(name); // recherche
+    if (obj == mTable.end()) {
+        out << "L'objet n'a pas été trouvé" << std::endl;
+    } else {
+        obj->second->writeToFile(out);        
+    }
+}
+void Administrator::readFromFile(const std::string& name, std::ifstream& in){
+    std::string type;
+    in >> type;
+    if (type == "Photo") {
+        std::string name, pathname;
+        int width, height;
+        in >> name >> pathname >> width >> height;
+        createPhoto(name, pathname, width, height);
+    } else if (type == "Video") {
+        std::string name, pathname;
+        int duration;
+        in >> name >> pathname >> duration;
+        createVideo(name, pathname, duration);
+    } else if (type == "Film") {
+        std::string name, pathname;
+        int duration, nbChapters;
+        in >> name >> pathname >> duration >> nbChapters;
+        int* chapters = new int[nbChapters];
+        for (int i = 0; i < nbChapters; i++) {
+            in >> chapters[i];
+        }
+        createFilm(name, pathname, duration, chapters, nbChapters);
+    }
 }
 
 void Administrator::createPhoto(    const std::string& name, 

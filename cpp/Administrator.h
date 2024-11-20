@@ -6,6 +6,7 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include <fstream>
 #include <map>
 #include "MultimediaObject.h"
 #include "Group.h"
@@ -24,6 +25,9 @@ private:
 public:
     Administrator();
     Administrator(MultimediaTable multimediaTable, GroupTable groupTable);
+
+    void writeToFile(const std::string& name, std::ofstream& out) const;
+    void readFromFile(const std::string& name, std::ifstream& in);
 
     void createPhoto(const std::string& name, const std::string& pathname, int width, int height);
     void createVideo(const std::string& name, const std::string& pathname, int duration);

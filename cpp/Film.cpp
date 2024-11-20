@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "Film.h"
 
 
@@ -25,6 +26,27 @@ Film::Film(std::string name, std::string pathname, int duration, int *chapters, 
 };
 Film::~Film(){
     std::cerr<<"Adieu film " + this->getName() + "\n"<<std::endl;
+};
+
+void Film::writeToFile(std::ofstream& out) const{
+    Video::writeToFile(out);
+    out << "Number of chapters: " << this->getNbChapters() << std::endl;
+    out << "Chapters: ";
+    for(int i = 0; i < this->getNbChapters(); i++){
+        out << this->getChapters()[i] << " ";
+    }
+    out << std::endl;
+};
+
+Film Film::readFromFile(std::ifstream& in){
+    std::string name, pathname;
+    int duration, nbChapters;
+    in >> name >> pathname >> duration >> nbChapters;
+    int* chapters = new int[nbChapters];
+    for (int i = 0; i < nbChapters; i++){
+        in >> chapters[i];
+    }
+    return Film(name, pathname, duration, chapters, nbChapters);
 };
 
 void Film::setChapters(int* chapters, int nbChapters){

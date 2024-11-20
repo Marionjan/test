@@ -3,7 +3,9 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "MultimediaObject.h"
+
 
 class Photo : public MultimediaObject {
 private:
@@ -31,6 +33,19 @@ public:
         std::cerr<<"Adieu photo " + this->getName() + "\n"<<std::endl;
     };
     
+    void writeToFile(std::ofstream& out) const override{
+        MultimediaObject::writeToFile(out);
+        out << "Width: " << this->getWidth() << std::endl;
+        out << "Height: " << this->getHeight() << std::endl;
+    };
+
+    Photo readFromFile(std::ifstream& in){
+        std::string name, pathname;
+        int width, height;
+        in >> name >> pathname >> width >> height;
+        return Photo(name, pathname, width, height);
+    };
+
     int getWidth() const{ 
         return width; 
     };
