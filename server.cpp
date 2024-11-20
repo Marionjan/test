@@ -40,7 +40,10 @@ int main(int argc, char* argv[])
       iss >> name >> filepath >> xdim >> ydim;
       response = "Creating photo: " + name;
       admin.createPhoto(name, filepath, xdim, ydim);
-      admin.display(name);
+
+      std::ostringstream oss;
+      admin.display(name, oss);
+      response = oss.str();
       
     }
     else if (request.rfind("create video", 0) == 0){
@@ -51,7 +54,9 @@ int main(int argc, char* argv[])
       iss >> name >> filepath >> duration;
       response = "Creating video: " + name;
       admin.createVideo(name, filepath, duration);
-      admin.display(name);
+      std::ostringstream oss;
+      admin.display(name, oss);
+      response = oss.str();
     }
     else if (request.rfind("create film", 0) == 0){
       std::string query = request.substr(12);
@@ -65,7 +70,9 @@ int main(int argc, char* argv[])
       }
       response = "Creating film: " + name;
       admin.createFilm(name, filepath, duration, chapters, nbChapters);
-      admin.display(name);
+      std::ostringstream oss;
+      admin.display(name, oss);
+      response = oss.str();
     }
     else if (request.rfind("create group", 0) == 0){
       std::string query = request.substr(13);
@@ -74,7 +81,9 @@ int main(int argc, char* argv[])
       iss >> name;
       response = "Creating group: " + name;
       admin.createGroup(name);
-      admin.display(name);
+      std::ostringstream oss;
+      admin.display(name, oss);
+      response = oss.str();
     }
     else if (request.rfind("search object", 0) == 0){
       std::string query = request.substr(14);
@@ -98,7 +107,9 @@ int main(int argc, char* argv[])
       std::string name;
       iss >> name;
       response = "Displaying: " + name;
-      admin.display(name);
+      std::ostringstream oss;
+      admin.display(name, oss);
+      response = oss.str();
     }
     else if (request.rfind("play ", 0) == 0) {
       std::string query = request.substr(5);

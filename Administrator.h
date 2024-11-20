@@ -34,7 +34,7 @@ public:
     void searchObject(const std::string& name);
     void searchGroup(const std::string& name);
 
-    void display(const std::string& name);
+    void Administrator::display(const std::string& name, std::ostream &stream);
 
     void play(const std::string& name);
 };

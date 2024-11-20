@@ -69,12 +69,12 @@ void Administrator::searchGroup(const std::string& name){
     }
 }
 
-void Administrator::display(const std::string& name){
+void Administrator::display(const std::string& name, std::ostream &stream){
     auto obj = mTable.find(name); // recherche
     if (obj == mTable.end()) {
-        std::cout << "L'objet n'a pas été trouvé" << std::endl;
+        stream << "L'objet n'a pas été trouvé" << std::endl;
     } else {
-        obj->second->display(std::cout);        
+        obj->second->display(stream);        
     }
 }
 
