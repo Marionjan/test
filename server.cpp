@@ -24,7 +24,17 @@ int main(int argc, char* argv[])
   auto* server =
   new TCPServer( [&](std::string const& request, std::string& response) {
     Administrator admin;
-    std::cout << "Administrator created" << std::endl;
+    response = "Available commands:\n"
+           "1. create photo <name> <filepath> <xdim> <ydim>\n"
+           "2. create video <name> <filepath> <duration>\n"
+           "3. create film <name> <filepath> <duration> <nbChapters> <chapters...>\n"
+           "4. create group <name>\n"
+           "5. search object <name>\n"
+           "6. search group <name>\n"
+           "7. display <name>\n"
+           "8. play <name>\n"
+           "9. search <query>\n";
+           
     // the request sent by the client to the server
     std::cout << "request: " << request << std::endl;
 
@@ -41,18 +51,61 @@ int main(int argc, char* argv[])
       
     }
     else if (request.rfind("create video", 0) == 0){
-      /* code */
+      std::string query = request.substr(13);
+      std::istringstream iss(query);
+      std::string name, filepath;
+      int duration;
+      iss >> name >> filepath >> duration;
+      response = "Creating video: " + name;
+      admin.createVideo(name, filepath, duration);
+      admin.display(name);
     }
     else if (request.rfind("create film", 0) == 0){
-      /* code */
+      std::string query = request.substr(12);
+      std::istringstream iss(query);
+      std::string name, filepath;
+      int duration, nbChapters;
+      iss >> name >> filepath >> duration >> nbChapters;
+      int* chapters = new int[nbChapters];
+      for (int i = 0; i < nbChapters; i++){
+        iss >> chapters[i];
+      }
+      response = "Creating film: " + name;
+      admin.createFilm(name, filepath, duration, chapters, nbChapters);
+      admin.display(name);
     }
     else if (request.rfind("create group", 0) == 0){
-      /* code */
+      std::string query = request.substr(13);
+      std::istringstream iss(query);
+      std::string name;
+      iss >> name;
+      response = "Creating group: " + name;
+      admin.createGroup(name);
+      admin.display(name);
     }
-    else if (request.rfind("add", 0) == 0) {
-      std::string query = request.substr(4);
-      // Process the add query
-      response = "Adding: " + query;
+    else if (request.rfind("search object", 0) == 0){
+      std::string query = request.substr(14);
+      std::istringstream iss(query);
+      std::string name;
+      iss >> name;
+      response = "Searching object: " + name;
+      admin.searchObject(name);
+    }
+    else if (request.rfind("search group", 0) == 0){
+      std::string query = request.substr(13);
+      std::istringstream iss(query);
+      std::string name;
+      iss >> name;
+      response = "Searching group: " + name;
+      admin.searchGroup(name);
+    }
+    else if (request.rfind("display", 0) == 0){
+      std::string query = request.substr(8);
+      std::istringstream iss(query);
+      std::string name;
+      iss >> name;
+      response = "Displaying: " + name;
+      admin.display(name);
     }
     else if (request.rfind("play ", 0) == 0) {
       std::string query = request.substr(5);
