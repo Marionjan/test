@@ -31,12 +31,12 @@ public:
 
     void createGroup(const std::string& name);
 
-    void searchObject(const std::string& name);
-    void searchGroup(const std::string& name);
+    void searchObject(const std::string& name, std::ostream &stream);
+    void searchGroup(const std::string& name, std::ostream &stream);	
 
     void display(const std::string& name, std::ostream &stream);
 
-    void play(const std::string& name);
+    void play(const std::string& name, std::ostream &stream);
 };
 
     

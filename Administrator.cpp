@@ -51,21 +51,21 @@ void Administrator::createGroup(const std::string& name){
     gTable[name] = std::make_shared<Group>(name);
 }
 
-void Administrator::searchObject(const std::string& name){
+void Administrator::searchObject(const std::string& name, std::ostream &stream){
     auto obj = mTable.find(name); // recherche
     if (obj == mTable.end()) {
-        std::cout << "L'objet n'a pas été trouvé" << std::endl;
+        stream << "L'objet n'a pas été trouvé" << std::endl;
     } else {
-        obj->second->display(std::cout);        
+        obj->second->display(stream);        
     }
 }
 
-void Administrator::searchGroup(const std::string& name){
+void Administrator::searchGroup(const std::string& name, std::ostream &stream){
     auto grp = gTable.find(name); // recherche
     if (grp == gTable.end()) {
-        std::cout << "Le groupe n'a pas été trouvé" << std::endl;
+        stream << "Le groupe n'a pas été trouvé" << std::endl;
     } else {
-        grp->second->displayGroup(std::cout);        
+        grp->second->displayGroup(stream);        
     }
 }
 
@@ -78,12 +78,13 @@ void Administrator::display(const std::string& name, std::ostream &stream){
     }
 }
 
-void Administrator::play(const std::string& name){
+void Administrator::play(const std::string& name, std::ostream &stream){
     auto obj = mTable.find(name); // recherche
     if (obj == mTable.end()) {
-        std::cout << "L'objet n'a pas été trouvé" << std::endl;
+        stream << "L'objet n'a pas été trouvé" << std::endl;
     } else {
-        obj->second->play();        
+        obj->second->play();
+        stream << "Regardez votre set-top box" << std::endl;        
     }
 }
 

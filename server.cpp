@@ -36,11 +36,11 @@ int main(int argc, char* argv[])
     if (request.rfind("create photo ", 0) == 0){
       std::string query = request.substr(13);
       std::istringstream iss(query);
-      std::string name, filepath;
+      std::string name, pathname;
       int xdim, ydim;
-      iss >> name >> filepath >> xdim >> ydim;
+      iss >> name >> pathname >> xdim >> ydim;
       response = "Creating photo: " + name;
-      admin.createPhoto(name, filepath, xdim, ydim);
+      admin.createPhoto(name, pathname, xdim, ydim);
 
       std::ostringstream oss;
       admin.display(name, oss);
@@ -52,11 +52,11 @@ int main(int argc, char* argv[])
     else if (request.rfind("create video", 0) == 0){
       std::string query = request.substr(13);
       std::istringstream iss(query);
-      std::string name, filepath;
+      std::string name, pathname;
       int duration;
-      iss >> name >> filepath >> duration;
+      iss >> name >> pathname >> duration;
       response = "Creating video: " + name;
-      admin.createVideo(name, filepath, duration);
+      admin.createVideo(name, pathname, duration);
       
       std::ostringstream oss;
       admin.display(name, oss);
@@ -67,15 +67,15 @@ int main(int argc, char* argv[])
     else if (request.rfind("create film", 0) == 0){
       std::string query = request.substr(12);
       std::istringstream iss(query);
-      std::string name, filepath;
+      std::string name, pathname;
       int duration, nbChapters;
-      iss >> name >> filepath >> duration >> nbChapters;
+      iss >> name >> pathname >> duration >> nbChapters;
       int* chapters = new int[nbChapters];
       for (int i = 0; i < nbChapters; i++){
         iss >> chapters[i];
       }
       response = "Creating film: " + name;
-      admin.createFilm(name, filepath, duration, chapters, nbChapters);
+      admin.createFilm(name, pathname, duration, chapters, nbChapters);
       
       std::ostringstream oss;
       admin.display(name, oss);
@@ -90,28 +90,33 @@ int main(int argc, char* argv[])
       iss >> name;
       response = "Creating group: " + name;
       admin.createGroup(name);
-      
-      std::ostringstream oss;
-      admin.display(name, oss);
-      std::string ossStr = oss.str();
-      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
-      response = ossStr;
+      response = "group " + name + " created";
     }
+
     else if (request.rfind("search object", 0) == 0){
       std::string query = request.substr(14);
       std::istringstream iss(query);
       std::string name;
       iss >> name;
-      response = "Searching object: " + name;
-      admin.searchObject(name);
+      
+      std::ostringstream oss;
+      admin.searchObject(name, oss);
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
     }
     else if (request.rfind("search group", 0) == 0){
       std::string query = request.substr(13);
       std::istringstream iss(query);
       std::string name;
       iss >> name;
-      response = "Searching group: " + name;
-      admin.searchGroup(name);
+      
+      std::ostringstream oss;
+      admin.searchGroup(name, oss);
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
+
     }
     else if (request.rfind("display", 0) == 0){
       std::string query = request.substr(8);
@@ -128,26 +133,30 @@ int main(int argc, char* argv[])
     }
     else if (request.rfind("play ", 0) == 0) {
       std::string query = request.substr(5);
-      // Process the add query
-      response = "Playing: " + query;
+      std::istringstream iss(query);
+      std::string name;
+      iss >> name;
+
+      std::ostringstream oss;
+      admin.play(name, oss);
+      std::string ossStr = oss.str();
+      std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
+      response = ossStr;
+
     }
-    else if (request.rfind("search ", 0) == 0) {
-      std::string query = request.substr(7);
-      // Process the search query
-      response = "Searching for: " + query;
-    }
+    
     else{
       response = "Unknown command ... "
-        "Available commands: "
-           "1. create photo <name> <filepath> <xdim> <ydim> ; "
-           "2. create video <name> <filepath> <duration> ; "
-           "3. create film <name> <filepath> <duration> <nbChapters> <chapters...> ; "
+        "Available commands: ; "
+           "1. create photo <name> <pathname> <xdim> <ydim> ; "
+           "2. create video <name> <pathname> <duration> ; "
+           "3. create film <name> <pathname> <duration> <nbChapters> <chapters...> ; "
            "4. create group <name> ; "
            "5. search object <name> ; "
            "6. search group <name> ; "
            "7. display <name> ; "
            "8. play <name> ; "
-           "9. search <query> ; ";
+           "9. quit"; 
     }
     // return false would close the connecytion with the client
     return true;
