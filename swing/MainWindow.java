@@ -15,7 +15,7 @@ public class MainWindow extends JFrame {
     private Client client;
 
     public MainWindow() {
-        setTitle("Client Multimédia - Interface Améliorée");
+        setTitle("Client Multimédia");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10, 10));
 
@@ -24,7 +24,7 @@ public class MainWindow extends JFrame {
         Color panelColor = new Color(220, 220, 240);
         getContentPane().setBackground(backgroundColor);
         
-        // Look and Feel moderne
+        // Utiliser le look and feel du système
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
@@ -84,7 +84,6 @@ public class MainWindow extends JFrame {
         }
 
         pack();
-        setLocationRelativeTo(null); // Centrer la fenêtre
         setVisible(true);
     }
 

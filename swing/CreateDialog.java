@@ -20,12 +20,11 @@ public class CreateDialog extends JDialog {
         this.client = client;
 
 
-        // Look and Feel moderne
+        // Utiliser le look and feel du système
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
         }
-
         setLayout(new BorderLayout());
 
         // Champs communs
@@ -67,7 +66,7 @@ public class CreateDialog extends JDialog {
         add(buttonPanel, BorderLayout.SOUTH);
 
         pack();
-        updateFields("Photo"); // Par défaut, le type "Photo" est sélectionné
+        updateFields("Photo"); // default : Afficher les champs spécifiques à une photo (x, y)
     }
 
     private JTextField createSpecificField(String label, JPanel panel) {
@@ -84,33 +83,31 @@ public class CreateDialog extends JDialog {
 	    comp.setVisible(false);
         }
 
-        // Utiliser la syntaxe `switch` traditionnelle
         switch (type) {
-	    case "Photo":
-	        xField.getParent().getComponent(0).setVisible(true); // Label "Dimensions X :"
+	    case "Photo": // Afficher les champs x, y
+	        xField.getParent().getComponent(0).setVisible(true); 
 	        xField.setVisible(true);
-	        yField.getParent().getComponent(2).setVisible(true); // Label "Dimensions Y :"
+	        yField.getParent().getComponent(2).setVisible(true); 
 	        yField.setVisible(true);
 	        break;
 
-	    case "Vidéo":
-	        durationField.getParent().getComponent(4).setVisible(true); // Label "Durée :"
+	    case "Vidéo": // Afficher le champ durée
+	        durationField.getParent().getComponent(4).setVisible(true); 
 	        durationField.setVisible(true);
 	        break;
 
-	    case "Film":
-	        durationField.getParent().getComponent(4).setVisible(true); // Label "Durée :"
+	    case "Film": // Afficher les champs durée et chapitres
+	        durationField.getParent().getComponent(4).setVisible(true); 
 	        durationField.setVisible(true);
     	        chaptersField.setVisible(true);
-	        chaptersField.getParent().getComponent(6).setVisible(true); // Label "Chapitres :"
+	        chaptersField.getParent().getComponent(6).setVisible(true); 
 	        break;
 
 	    default:
-	        // Ne rien afficher (si nécessaire)
 	        break;
         }
 
-        pack(); // Ajuste la taille de la fenêtre
+        pack(); 
     }
 
     private void handleCreate(ActionEvent event) {
