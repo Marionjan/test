@@ -12,56 +12,48 @@ public class CreateDialog extends JDialog {
     private JTextField yField;
     private JTextField durationField;
     private JTextField chaptersField;
+    private JPanel specificFieldsPanel;
     private Client client;
 
     public CreateDialog(JFrame parent, Client client) {
         super(parent, "Créer un objet multimédia", true);
         this.client = client;
 
+
+        // Look and Feel moderne
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ignored) {
+        }
+
         setLayout(new BorderLayout());
-        JPanel formPanel = new JPanel(new GridLayout(6, 2));
 
         // Champs communs
-        formPanel.add(new JLabel("Nom :"));
+        JPanel commonFieldsPanel = new JPanel(new GridLayout(2, 2));
+        commonFieldsPanel.add(new JLabel("Nom :"));
         nameField = new JTextField();
-        formPanel.add(nameField);
+        commonFieldsPanel.add(nameField);
 
-        formPanel.add(new JLabel("Chemin :"));
+        commonFieldsPanel.add(new JLabel("Chemin :"));
         pathField = new JTextField();
-        formPanel.add(pathField);
+        commonFieldsPanel.add(pathField);
+        add(commonFieldsPanel, BorderLayout.NORTH);
 
-        // Champs spécifiques
-        formPanel.add(new JLabel("Dimensions X :"));
-        xField = new JTextField();
-        xField.setEnabled(false); // Par défaut désactivé
-        formPanel.add(xField);
-
-        formPanel.add(new JLabel("Dimensions Y :"));
-        yField = new JTextField();
-        yField.setEnabled(false);
-        formPanel.add(yField);
-
-        formPanel.add(new JLabel("Durée :"));
-        durationField = new JTextField();
-        durationField.setEnabled(false);
-        formPanel.add(durationField);
-
-        formPanel.add(new JLabel("Chapitres : (durées séparées par des virgules)"));
-        chaptersField = new JTextField();
-        chaptersField.setEnabled(false);
-        formPanel.add(chaptersField);
-
-        add(formPanel, BorderLayout.CENTER);
+        // Champs spécifiques (masqués/affichés dynamiquement)
+        specificFieldsPanel = new JPanel(new GridLayout(4, 2));
+        xField = createSpecificField("Dimensions X :", specificFieldsPanel);
+        yField = createSpecificField("Dimensions Y :", specificFieldsPanel);
+        durationField = createSpecificField("Durée :", specificFieldsPanel);
+        chaptersField = createSpecificField("Chapitres : (durées séparées par des virgules)", specificFieldsPanel);
+        add(specificFieldsPanel, BorderLayout.CENTER);
 
         // Choix du type
         JPanel typePanel = new JPanel();
         JComboBox<String> typeCombo = new JComboBox<>(new String[]{"Photo", "Vidéo", "Film"});
+        typeCombo.addActionListener(e -> updateFields(typeCombo.getSelectedItem().toString()));
         typePanel.add(new JLabel("Type :"));
         typePanel.add(typeCombo);
-
-        typeCombo.addActionListener(e -> updateFields(typeCombo.getSelectedItem().toString()));
-
-        add(typePanel, BorderLayout.NORTH);
+        add(typePanel, BorderLayout.WEST);
 
         // Boutons
         JPanel buttonPanel = new JPanel();
@@ -70,19 +62,55 @@ public class CreateDialog extends JDialog {
 
         createButton.addActionListener(this::handleCreate);
         cancelButton.addActionListener(e -> dispose());
-
         buttonPanel.add(createButton);
         buttonPanel.add(cancelButton);
         add(buttonPanel, BorderLayout.SOUTH);
 
         pack();
+        updateFields("Photo"); // Par défaut, le type "Photo" est sélectionné
+    }
+
+    private JTextField createSpecificField(String label, JPanel panel) {
+        JLabel fieldLabel = new JLabel(label);
+        JTextField textField = new JTextField();
+        panel.add(fieldLabel);
+        panel.add(textField);
+        return textField;
     }
 
     private void updateFields(String type) {
-        xField.setEnabled(type.equals("Photo"));
-        yField.setEnabled(type.equals("Photo"));
-        durationField.setEnabled(type.equals("Vidéo") || type.equals("Film"));
-        chaptersField.setEnabled(type.equals("Film"));
+        // Masquer tous les champs spécifiques
+        for (Component comp : specificFieldsPanel.getComponents()) {
+	    comp.setVisible(false);
+        }
+
+        // Utiliser la syntaxe `switch` traditionnelle
+        switch (type) {
+	    case "Photo":
+	        xField.getParent().getComponent(0).setVisible(true); // Label "Dimensions X :"
+	        xField.setVisible(true);
+	        yField.getParent().getComponent(2).setVisible(true); // Label "Dimensions Y :"
+	        yField.setVisible(true);
+	        break;
+
+	    case "Vidéo":
+	        durationField.getParent().getComponent(4).setVisible(true); // Label "Durée :"
+	        durationField.setVisible(true);
+	        break;
+
+	    case "Film":
+	        durationField.getParent().getComponent(4).setVisible(true); // Label "Durée :"
+	        durationField.setVisible(true);
+    	        chaptersField.setVisible(true);
+	        chaptersField.getParent().getComponent(6).setVisible(true); // Label "Chapitres :"
+	        break;
+
+	    default:
+	        // Ne rien afficher (si nécessaire)
+	        break;
+        }
+
+        pack(); // Ajuste la taille de la fenêtre
     }
 
     private void handleCreate(ActionEvent event) {
@@ -96,14 +124,14 @@ public class CreateDialog extends JDialog {
         }
 
         try {
-            if (xField.isEnabled() && yField.isEnabled()) {
+            if (xField.isVisible() && yField.isVisible()) {
                 int x = Integer.parseInt(xField.getText().trim());
                 int y = Integer.parseInt(yField.getText().trim());
                 command = String.format("create photo %s %s %d %d", name, path, x, y);
-            } else if (durationField.isEnabled() && !chaptersField.isEnabled()) {
+            } else if (durationField.isVisible() && !chaptersField.isVisible()) {
                 int duration = Integer.parseInt(durationField.getText().trim());
                 command = String.format("create video %s %s %d", name, path, duration);
-            } else if (chaptersField.isEnabled()) {
+            } else if (chaptersField.isVisible()) {
                 int duration = Integer.parseInt(durationField.getText().trim());
                 String[] chapters = chaptersField.getText().trim().split(",");
                 command = String.format("create film %s %s %d %d %s", name, path, duration, chapters.length, String.join(" ", chapters));
@@ -117,3 +145,4 @@ public class CreateDialog extends JDialog {
         }
     }
 }
+
