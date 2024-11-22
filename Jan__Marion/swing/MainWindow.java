@@ -9,7 +9,7 @@ public class MainWindow extends JFrame {
     private static final long serialVersionUID = 1L;
 
     private JTextArea textArea;
-    private JTextField commandField;
+    private JTextField nameField;
     private JButton searchButton, playButton, createButton;
     private JLabel statusLabel;
     private Client client;
@@ -23,7 +23,7 @@ public class MainWindow extends JFrame {
         Color backgroundColor = new Color(240, 240, 250);
         Color panelColor = new Color(220, 220, 240);
         getContentPane().setBackground(backgroundColor);
-        
+
         // Utiliser le look and feel du système
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -38,13 +38,13 @@ public class MainWindow extends JFrame {
         scrollPane.setBorder(BorderFactory.createTitledBorder("Réponses du Serveur"));
         add(scrollPane, BorderLayout.CENTER);
 
-        // Zone de saisie de commande
+        // Zone de saisie de nom
         JPanel inputPanel = new JPanel(new BorderLayout(10, 10));
         inputPanel.setBackground(panelColor);
-        commandField = new JTextField();
-        commandField.setToolTipText("Entrez une commande ici.");
-        inputPanel.add(new JLabel("Commande : "), BorderLayout.WEST);
-        inputPanel.add(commandField, BorderLayout.CENTER);
+        nameField = new JTextField();
+        nameField.setToolTipText("Entrez le nom ici.");
+        inputPanel.add(new JLabel("Nom : "), BorderLayout.WEST);
+        inputPanel.add(nameField, BorderLayout.CENTER);
 
         // Boutons d'action
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -52,9 +52,11 @@ public class MainWindow extends JFrame {
         searchButton = new JButton("Rechercher");
         playButton = new JButton("Jouer");
         createButton = new JButton("Créer");
+
         searchButton.setToolTipText("Rechercher un objet multimédia.");
         playButton.setToolTipText("Jouer un objet multimédia.");
         createButton.setToolTipText("Créer un nouvel objet multimédia.");
+
         buttonPanel.add(searchButton);
         buttonPanel.add(playButton);
         buttonPanel.add(createButton);
@@ -88,11 +90,11 @@ public class MainWindow extends JFrame {
     }
 
     private void handleSearch(ActionEvent event) {
-        sendCommandToServer("search object " + commandField.getText().trim());
+        sendCommandToServer("search object " + nameField.getText().trim());
     }
 
     private void handlePlay(ActionEvent event) {
-        sendCommandToServer("play " + commandField.getText().trim());
+        sendCommandToServer("play " + nameField.getText().trim());
     }
 
     private void handleCreate(ActionEvent event) {
