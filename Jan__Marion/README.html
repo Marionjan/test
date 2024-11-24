@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set-Top Box Multimédia</title>
+</head>
+<body>
+
+<h1>Set-Top Box Multimédia</h1>
+
+<h2>Introduction</h2>
+<p>Le but de ce projet est de créer l'ébauche d'un logiciel pour une set-top box multimédia permettant de jouer des vidéos, des films, d'afficher des photos, et plus encore. Ce projet est divisé en deux parties principales :</p>
+<ul>
+    <li><strong>Serveur C++</strong> : Le serveur gère la communication réseau et le traitement des demandes de clients via des sockets.</li>
+    <li><strong>Client Java</strong> : Le client est une application avec une interface graphique qui permet à l'utilisateur de se connecter au serveur, de rechercher et de jouer des vidéos, de visualiser des photos, etc.</li>
+</ul>
+
+<h2>Prérequis</h2>
+
+<h3>Serveur C++ :</h3>
+<ul>
+    <li>Système d'exploitation : Linux / Windows</li>
+    <li>Compilateur C++ (g++ recommandé)</li>
+    <li>Libs pour la gestion des sockets (par défaut, les sockets sont gérés par les librairies systèmes)</li>
+</ul>
+
+<h3>Client Java :</h3>
+<ul>
+    <li>Système d'exploitation : Linux / Windows</li>
+    <li>Java 8 ou version supérieure</li>
+    <li>JDK installé (Java Development Kit)</li>
+</ul>
+
+<h2>Compilation et exécution</h2>
+
+<h3>1. Serveur C++ (avec Makefile)</h3>
+<p>Le serveur est écrit en C++ et utilise des sockets pour la communication. Il y a un <strong>Makefile</strong> pour la partie serveur.</p>
+
+<h4>Étapes pour compiler et exécuter le serveur :</h4>
+<ol>
+    <li>Ouvrez un terminal dans le répertoire où se trouve le Makefile du serveur.</li>
+    <li>Exécutez la commande suivante pour compiler et exécuter le serveur :
+        <pre><code>make run</code></pre>
+    </li>
+    <li>Cette commande va d'abord compiler le code C++ à l'aide du Makefile, générer l'exécutable du serveur, puis lancer le serveur. Le serveur commencera à écouter sur le port 3331 (ou le port configuré dans le code).</li>
+</ol>
+
+<h3>2. Client Java (avec Makefile)</h3>
+<p>Le client est écrit en Java et utilise Java Swing pour l'interface graphique. Il y a également un Makefile pour la partie cliente Java.</p>
+
+<h4>Étapes pour compiler et exécuter le client :</h4>
+<ol>
+    <li>Ouvrez un terminal dans le répertoire où se trouve le Makefile du client.</li>
+    <li>Exécutez la commande suivante pour compiler et exécuter le code Java :
+        <pre><code>make run</code></pre>
+    </li>
+    <li>Cette commande va d'abord compiler les fichiers Java et générer les fichiers .class, puis lancer l'application Java.</li>
+</ol>
+
+<h4>Connexion au Serveur</h4>
+<p>Assurez-vous que le serveur est en cours d'exécution sur l'adresse localhost (ou modifiez l'adresse IP dans le code si nécessaire). L'application cliente tentera de se connecter au serveur à l'adresse spécifiée (localhost:3331 par défaut).</p>
+
+<h2>Utilisation</h2>
+<ul>
+    <li>Lancer l'application : Ouvrez l'application cliente Java (MainWindow).</li>
+    <li>Rechercher un objet multimédia : Entrez un nom d'objet dans le champ de saisie et cliquez sur "Rechercher".</li>
+    <li>Jouer un objet multimédia : Sélectionnez un objet multimédia recherché et cliquez sur "Jouer".</li>
+    <li>Créer un objet multimédia : Cliquez sur "Créer" pour ouvrir un formulaire permettant de créer un nouvel objet multimédia.</li>
+</ul>
+
+<h2>Technologies utilisées</h2>
+<ul>
+    <li>Java Swing pour l'interface graphique.</li>
+    <li>C++ (Sockets) pour la gestion des connexions réseau.</li>
+    <li>TCP/IP pour la communication entre le client et le serveur.</li>
+</ul>
+
+<h2>Auteurs</h2>
+<ul>
+    <li>Eric Lecolinet (pour les classes de socket C++).</li>
+    <li>Marion Jan (pour l'interface graphique et l'intégration client/serveur).</li>
+</ul>
+
+</body>
+</html>

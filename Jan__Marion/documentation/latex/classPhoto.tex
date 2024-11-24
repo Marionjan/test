@@ -1,0 +1,235 @@
+\hypertarget{classPhoto}{}\doxysection{Photo Class Reference}
+\label{classPhoto}\index{Photo@{Photo}}
+
+
+Classe représentant une photo avec des dimensions spécifiques.  
+
+
+
+
+{\ttfamily \#include $<$Photo.\+h$>$}
+
+
+
+Inheritance diagram for Photo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classPhoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Photo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classPhoto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}{Photo}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPhoto_a0c78b8625b9414aca1b059491657879f}{Photo}} (std\+::string name, std\+::string pathname, int width, int height)
+\begin{DoxyCompactList}\small\item\em Constructeur avec paramètres. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPhoto_a1bf707fc71f95a3aa3464bd4e339afd0}{$\sim$\+Photo}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_a50bd920438d2922a4780727de399df7c}{write\+To\+File}} (std\+::ofstream \&out) const override
+\begin{DoxyCompactList}\small\item\em Écrit les informations de la photo dans un fichier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPhoto}{Photo}} \mbox{\hyperlink{classPhoto_a531d6b96010448d966b8ea7bae9713ba}{read\+From\+File}} (std\+::ifstream \&in)
+\begin{DoxyCompactList}\small\item\em Lit les informations d\textquotesingle{}une photo depuis un fichier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPhoto_a6cb3d92e0bbe66b7e218d4bbcff1e73f}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Obtient la largeur de la photo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPhoto_af8e577fa82f50eccd2931fad3b94e578}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Obtient la hauteur de la photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_a9d2940d2b07a0813c2c5cdc7e2f1c79a}{set\+Width}} (int width)
+\begin{DoxyCompactList}\small\item\em Définit la largeur de la photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_a964bdc2a14caef3c63e6ee31919e1c9b}{set\+Height}} (int height)
+\begin{DoxyCompactList}\small\item\em Définit la hauteur de la photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_aec118f05711d4cb7d8cd683bc402eb0f}{display}} (std\+::ostream \&stream) const override
+\begin{DoxyCompactList}\small\item\em Affiche les informations de la photo dans un flux. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_a98b55224b5f9bd016cb08aa2e9a64e46}{play}} () const override
+\begin{DoxyCompactList}\small\item\em Joue la photo en utilisant une visionneuse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant une photo avec des dimensions spécifiques. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}\label{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}} 
+\index{Photo@{Photo}!Photo@{Photo}}
+\index{Photo@{Photo}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{Photo()}{Photo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Photo\+::\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur par défaut. 
+
+Initialise une photo avec des valeurs par défaut. \mbox{\Hypertarget{classPhoto_a0c78b8625b9414aca1b059491657879f}\label{classPhoto_a0c78b8625b9414aca1b059491657879f}} 
+\index{Photo@{Photo}!Photo@{Photo}}
+\index{Photo@{Photo}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{Photo()}{Photo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Photo\+::\+Photo (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{pathname,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur avec paramètres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de la photo. \\
+\hline
+{\em pathname} & Chemin d\textquotesingle{}accès du fichier photo. \\
+\hline
+{\em width} & Largeur de la photo. \\
+\hline
+{\em height} & Hauteur de la photo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPhoto_a1bf707fc71f95a3aa3464bd4e339afd0}\label{classPhoto_a1bf707fc71f95a3aa3464bd4e339afd0}} 
+\index{Photo@{Photo}!````~Photo@{$\sim$Photo}}
+\index{````~Photo@{$\sim$Photo}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{$\sim$Photo()}{~Photo()}}
+{\footnotesize\ttfamily virtual Photo\+::$\sim$\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructeur. 
+
+Affiche un message indiquant la destruction de la photo. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPhoto_aec118f05711d4cb7d8cd683bc402eb0f}\label{classPhoto_aec118f05711d4cb7d8cd683bc402eb0f}} 
+\index{Photo@{Photo}!display@{display}}
+\index{display@{display}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Photo\+::display (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Affiche les informations de la photo dans un flux. 
+
+Les informations incluent le nom, le chemin d\textquotesingle{}accès, et les dimensions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Flux dans lequel afficher les informations. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classMultimediaObject_a385f4b98a4a7d9d0b7ff717d682ee16d}{Multimedia\+Object}}.
+
+\mbox{\Hypertarget{classPhoto_af8e577fa82f50eccd2931fad3b94e578}\label{classPhoto_af8e577fa82f50eccd2931fad3b94e578}} 
+\index{Photo@{Photo}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int Photo\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtient la hauteur de la photo. 
+
+\begin{DoxyReturn}{Returns}
+La hauteur en pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPhoto_a6cb3d92e0bbe66b7e218d4bbcff1e73f}\label{classPhoto_a6cb3d92e0bbe66b7e218d4bbcff1e73f}} 
+\index{Photo@{Photo}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int Photo\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtient la largeur de la photo. 
+
+\begin{DoxyReturn}{Returns}
+La largeur en pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPhoto_a98b55224b5f9bd016cb08aa2e9a64e46}\label{classPhoto_a98b55224b5f9bd016cb08aa2e9a64e46}} 
+\index{Photo@{Photo}!play@{play}}
+\index{play@{play}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Photo\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Joue la photo en utilisant une visionneuse. 
+
+Cette méthode utilise la commande système {\ttfamily imagej} pour afficher la photo. \mbox{\Hypertarget{classPhoto_a531d6b96010448d966b8ea7bae9713ba}\label{classPhoto_a531d6b96010448d966b8ea7bae9713ba}} 
+\index{Photo@{Photo}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPhoto}{Photo}} Photo\+::read\+From\+File (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lit les informations d\textquotesingle{}une photo depuis un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Flux d\textquotesingle{}entrée contenant les informations de la photo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un objet \mbox{\hyperlink{classPhoto}{Photo}} initialisé avec les données du fichier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPhoto_a964bdc2a14caef3c63e6ee31919e1c9b}\label{classPhoto_a964bdc2a14caef3c63e6ee31919e1c9b}} 
+\index{Photo@{Photo}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily void Photo\+::set\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Définit la hauteur de la photo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & La nouvelle hauteur en pixels. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPhoto_a9d2940d2b07a0813c2c5cdc7e2f1c79a}\label{classPhoto_a9d2940d2b07a0813c2c5cdc7e2f1c79a}} 
+\index{Photo@{Photo}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily void Photo\+::set\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Définit la largeur de la photo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & La nouvelle largeur en pixels. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPhoto_a50bd920438d2922a4780727de399df7c}\label{classPhoto_a50bd920438d2922a4780727de399df7c}} 
+\index{Photo@{Photo}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void Photo\+::write\+To\+File (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Écrit les informations de la photo dans un fichier. 
+
+Cette méthode inclut les dimensions de la photo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Flux de sortie vers lequel écrire les informations. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classMultimediaObject_af1d20328871ded2784b54d6ae512de5c}{Multimedia\+Object}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{Photo_8h}{Photo.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,316 @@
+\hypertarget{classAdministrator}{}\doxysection{Administrator Class Reference}
+\label{classAdministrator}\index{Administrator@{Administrator}}
+
+
+Classe permettant de gérer les objets multimédias et les groupes.  
+
+
+
+
+{\ttfamily \#include $<$Administrator.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAdministrator_a2fe0bc295b84c5c49f5ff91c90d40e59}{Administrator}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAdministrator_a86404c406c483e8efc56f72bd0d67be8}{Administrator}} (\mbox{\hyperlink{Administrator_8h_a95c88ff3a20b5504671a98f870a6b793}{Multimedia\+Table}} multimedia\+Table, \mbox{\hyperlink{Administrator_8h_a40b5e64a86d2d4394bc4cd6c42addc63}{Group\+Table}} group\+Table)
+\begin{DoxyCompactList}\small\item\em Constructeur avec paramètres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_ab2109680438653c6a4ecde2fc92f7cb7}{write\+To\+File}} (const std\+::string \&name, std\+::ofstream \&out) const
+\begin{DoxyCompactList}\small\item\em Écrit un objet multimédia dans un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_ae05f97ab452bf88646b46765aa96ad35}{read\+From\+File}} (const std\+::string \&name, std\+::ifstream \&in)
+\begin{DoxyCompactList}\small\item\em Lit un objet multimédia depuis un fichier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_af7f4df9c0470cbafc359d5a85706802d}{create\+Photo}} (const std\+::string \&name, const std\+::string \&pathname, int width, int height)
+\begin{DoxyCompactList}\small\item\em Crée une photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_a840aeb96fa57ed595fa8120a06ce70ee}{create\+Video}} (const std\+::string \&name, const std\+::string \&pathname, int duration)
+\begin{DoxyCompactList}\small\item\em Crée une vidéo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_a175ed79300418084a034de01a2b6789b}{create\+Film}} (const std\+::string \&name, const std\+::string \&pathname, int duration, int $\ast$chapters, int nb\+Chapters)
+\begin{DoxyCompactList}\small\item\em Crée un film. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_ac8c813348c39a78452912c3c87e6509f}{create\+Group}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Crée un groupe vide. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_a840626293c1cb415ae8b4bac1da43c4f}{search\+Object}} (const std\+::string \&name, std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em Recherche un objet multimédia par nom et affiche ses informations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_a6ef7776598673f9e15961ed64790d73f}{search\+Group}} (const std\+::string \&name, std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em Recherche un groupe par nom et affiche ses informations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_a8a09175dfbb79faa439fca6a08b4f480}{display}} (const std\+::string \&name, std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em Affiche un objet multimédia par nom. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAdministrator_a2c87589163df233fa97ba5458bc8b116}{play}} (const std\+::string \&name, std\+::ostream \&stream)
+\begin{DoxyCompactList}\small\item\em Joue un objet multimédia par nom. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe permettant de gérer les objets multimédias et les groupes. 
+
+La classe \mbox{\hyperlink{classAdministrator}{Administrator}} fournit des méthodes pour créer, lire, écrire, rechercher, afficher et jouer des objets multimédias, ainsi que pour gérer des groupes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAdministrator_a2fe0bc295b84c5c49f5ff91c90d40e59}\label{classAdministrator_a2fe0bc295b84c5c49f5ff91c90d40e59}} 
+\index{Administrator@{Administrator}!Administrator@{Administrator}}
+\index{Administrator@{Administrator}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{Administrator()}{Administrator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Administrator\+::\+Administrator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut. 
+
+Initialise les tables d\textquotesingle{}objets et de groupes comme étant vides.
+
+Crée un administrateur vide avec des tables d\textquotesingle{}objets et de groupes initialisées. \mbox{\Hypertarget{classAdministrator_a86404c406c483e8efc56f72bd0d67be8}\label{classAdministrator_a86404c406c483e8efc56f72bd0d67be8}} 
+\index{Administrator@{Administrator}!Administrator@{Administrator}}
+\index{Administrator@{Administrator}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{Administrator()}{Administrator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Administrator\+::\+Administrator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Administrator_8h_a95c88ff3a20b5504671a98f870a6b793}{Multimedia\+Table}}}]{multimedia\+Table,  }\item[{\mbox{\hyperlink{Administrator_8h_a40b5e64a86d2d4394bc4cd6c42addc63}{Group\+Table}}}]{group\+Table }\end{DoxyParamCaption})}
+
+
+
+Constructeur avec paramètres. 
+
+Constructeur avec tables d\textquotesingle{}objets et de groupes.
+
+Permet d\textquotesingle{}initialiser un administrateur avec des tables prédéfinies.
+
+
+\begin{DoxyParams}{Parameters}
+{\em multimedia\+Table} & Table des objets multimédias. \\
+\hline
+{\em group\+Table} & Table des groupes.\\
+\hline
+{\em multimedia\+Table} & La table des objets multimédias. \\
+\hline
+{\em group\+Table} & La table des groupes. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAdministrator_a175ed79300418084a034de01a2b6789b}\label{classAdministrator_a175ed79300418084a034de01a2b6789b}} 
+\index{Administrator@{Administrator}!createFilm@{createFilm}}
+\index{createFilm@{createFilm}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{createFilm()}{createFilm()}}
+{\footnotesize\ttfamily void Administrator\+::create\+Film (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{pathname,  }\item[{int}]{duration,  }\item[{int $\ast$}]{chapters,  }\item[{int}]{nb\+Chapters }\end{DoxyParamCaption})}
+
+
+
+Crée un film. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du film. \\
+\hline
+{\em pathname} & Chemin vers le fichier du film. \\
+\hline
+{\em duration} & Durée du film en secondes. \\
+\hline
+{\em chapters} & Tableau contenant les durées des chapitres. \\
+\hline
+{\em nb\+Chapters} & Nombre de chapitres dans le film.\\
+\hline
+{\em name} & Nom du film. \\
+\hline
+{\em pathname} & Chemin du fichier. \\
+\hline
+{\em duration} & Durée du film. \\
+\hline
+{\em chapters} & Tableau des durées des chapitres. \\
+\hline
+{\em nb\+Chapters} & Nombre de chapitres. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_ac8c813348c39a78452912c3c87e6509f}\label{classAdministrator_ac8c813348c39a78452912c3c87e6509f}} 
+\index{Administrator@{Administrator}!createGroup@{createGroup}}
+\index{createGroup@{createGroup}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{createGroup()}{createGroup()}}
+{\footnotesize\ttfamily void Administrator\+::create\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Crée un groupe vide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du groupe. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_af7f4df9c0470cbafc359d5a85706802d}\label{classAdministrator_af7f4df9c0470cbafc359d5a85706802d}} 
+\index{Administrator@{Administrator}!createPhoto@{createPhoto}}
+\index{createPhoto@{createPhoto}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{createPhoto()}{createPhoto()}}
+{\footnotesize\ttfamily void Administrator\+::create\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{pathname,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Crée une photo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de la photo. \\
+\hline
+{\em pathname} & Chemin vers le fichier de la photo. \\
+\hline
+{\em width} & Largeur de la photo. \\
+\hline
+{\em height} & Hauteur de la photo.\\
+\hline
+{\em name} & Nom de la photo. \\
+\hline
+{\em pathname} & Chemin du fichier. \\
+\hline
+{\em width} & Largeur de la photo. \\
+\hline
+{\em height} & Hauteur de la photo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_a840aeb96fa57ed595fa8120a06ce70ee}\label{classAdministrator_a840aeb96fa57ed595fa8120a06ce70ee}} 
+\index{Administrator@{Administrator}!createVideo@{createVideo}}
+\index{createVideo@{createVideo}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{createVideo()}{createVideo()}}
+{\footnotesize\ttfamily void Administrator\+::create\+Video (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{pathname,  }\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Crée une vidéo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de la vidéo. \\
+\hline
+{\em pathname} & Chemin vers le fichier de la vidéo. \\
+\hline
+{\em duration} & Durée de la vidéo en secondes.\\
+\hline
+{\em name} & Nom de la vidéo. \\
+\hline
+{\em pathname} & Chemin du fichier. \\
+\hline
+{\em duration} & Durée de la vidéo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_a8a09175dfbb79faa439fca6a08b4f480}\label{classAdministrator_a8a09175dfbb79faa439fca6a08b4f480}} 
+\index{Administrator@{Administrator}!display@{display}}
+\index{display@{display}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Administrator\+::display (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Affiche un objet multimédia par nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em stream} & Flux de sortie où écrire les informations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_a2c87589163df233fa97ba5458bc8b116}\label{classAdministrator_a2c87589163df233fa97ba5458bc8b116}} 
+\index{Administrator@{Administrator}!play@{play}}
+\index{play@{play}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Administrator\+::play (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Joue un objet multimédia par nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em stream} & Flux de sortie où écrire les messages.\\
+\hline
+{\em name} & Nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em stream} & Flux de sortie où écrire les informations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_ae05f97ab452bf88646b46765aa96ad35}\label{classAdministrator_ae05f97ab452bf88646b46765aa96ad35}} 
+\index{Administrator@{Administrator}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily void Administrator\+::read\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ifstream \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Lit un objet multimédia depuis un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em in} & Flux d\textquotesingle{}entrée pour la lecture.\\
+\hline
+{\em name} & Le nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em in} & Flux d\textquotesingle{}entrée pour lire les données. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_a6ef7776598673f9e15961ed64790d73f}\label{classAdministrator_a6ef7776598673f9e15961ed64790d73f}} 
+\index{Administrator@{Administrator}!searchGroup@{searchGroup}}
+\index{searchGroup@{searchGroup}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{searchGroup()}{searchGroup()}}
+{\footnotesize\ttfamily void Administrator\+::search\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Recherche un groupe par nom et affiche ses informations. 
+
+Recherche un groupe par nom et l\textquotesingle{}affiche.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du groupe. \\
+\hline
+{\em stream} & Flux de sortie où écrire les informations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_a840626293c1cb415ae8b4bac1da43c4f}\label{classAdministrator_a840626293c1cb415ae8b4bac1da43c4f}} 
+\index{Administrator@{Administrator}!searchObject@{searchObject}}
+\index{searchObject@{searchObject}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{searchObject()}{searchObject()}}
+{\footnotesize\ttfamily void Administrator\+::search\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})}
+
+
+
+Recherche un objet multimédia par nom et affiche ses informations. 
+
+Recherche un objet multimédia par nom et l\textquotesingle{}affiche.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}objet multimédial. \\
+\hline
+{\em stream} & Flux de sortie où écrire les informations.\\
+\hline
+{\em name} & Nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em stream} & Flux de sortie où écrire les informations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAdministrator_ab2109680438653c6a4ecde2fc92f7cb7}\label{classAdministrator_ab2109680438653c6a4ecde2fc92f7cb7}} 
+\index{Administrator@{Administrator}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!Administrator@{Administrator}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void Administrator\+::write\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ofstream \&}]{out }\end{DoxyParamCaption}) const}
+
+
+
+Écrit un objet multimédia dans un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em out} & Flux de sortie pour l\textquotesingle{}écriture.\\
+\hline
+{\em name} & Le nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em out} & Flux de sortie pour écrire les données. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{Administrator_8h}{Administrator.\+h}}\item 
+cpp/\mbox{\hyperlink{Administrator_8cpp}{Administrator.\+cpp}}\end{DoxyCompactItemize}

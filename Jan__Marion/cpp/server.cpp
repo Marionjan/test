@@ -1,8 +1,18 @@
-//
-//  server.cpp
-//  TP C++
-//  Eric Lecolinet - Telecom ParisTech - 2016.
-//
+/**
+ * @file server.cpp
+ * @brief Implementation of the TCP server that handles multimedia objects and groups.
+ * 
+ * This file contains the server logic for handling requests from clients to manage multimedia objects
+ * such as photos, videos, and films, as well as groups of multimedia objects. The server listens on
+ * a TCP socket and processes various commands sent by the client, including object creation, search, 
+ * and display.
+ * 
+ * @author Eric Lecolinet
+ * @contributors Marion Jan 
+ * @date 2016
+ * @note Telecom ParisTech
+ * 
+ */
 
 #include <memory>
 #include <string>
@@ -16,23 +26,35 @@
 #include "Photo.h"
 #include "Group.h"
 
-const int PORT = 3331;
+const int PORT = 3331; ///< Port on which the server listens for incoming client connections.
 
-
+/**
+ * @brief Main function that initializes and runs the TCP server.
+ * 
+ * The main function creates a `TCPServer` instance and enters a loop where it waits for requests
+ * from clients. Upon receiving a request, the server parses the request and performs the corresponding
+ * action, such as creating multimedia objects (photo, video, film), searching for objects, displaying
+ * their details, or playing media.
+ * 
+ * The server responds to each request with a corresponding response message, and the connection remains
+ * open until the client terminates it or an error occurs.
+ * 
+ * @param argc The number of command-line arguments.
+ * @param argv The array of command-line arguments.
+ * @return 0 if the server runs successfully, 1 if an error occurs.
+ */
 int main(int argc, char* argv[])
 {
-  // cree le TCPServer
-  Administrator admin;
-  
+  // Create the TCPServer
+  Administrator admin; ///< The administrator that handles multimedia objects.
+
   auto* server =
   new TCPServer( [&](std::string const& request, std::string& response) {
     
-    
-
-    // the request sent by the client to the server
+    // The request sent by the client to the server
     std::cout << "request: " << request << std::endl;
 
-    
+    // Handle 'create photo' command
     if (request.rfind("create photo ", 0) == 0){
       std::string query = request.substr(13);
       std::istringstream iss(query);
@@ -49,6 +71,7 @@ int main(int argc, char* argv[])
       response = ossStr;
       
     }
+    // Handle 'create video' command
     else if (request.rfind("create video", 0) == 0){
       std::string query = request.substr(13);
       std::istringstream iss(query);
@@ -64,6 +87,7 @@ int main(int argc, char* argv[])
       std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
       response = ossStr;
     }
+    // Handle 'create film' command
     else if (request.rfind("create film", 0) == 0){
       std::string query = request.substr(12);
       std::istringstream iss(query);
@@ -83,6 +107,7 @@ int main(int argc, char* argv[])
       std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
       response = ossStr;
     }
+    // Handle 'create group' command
     else if (request.rfind("create group", 0) == 0){
       std::string query = request.substr(13);
       std::istringstream iss(query);
@@ -90,9 +115,9 @@ int main(int argc, char* argv[])
       iss >> name;
       response = "Creating group: " + name;
       admin.createGroup(name);
-      response = "group " + name + " created";
+      response = "Group " + name + " created";
     }
-
+    // Handle 'search object' command
     else if (request.rfind("search object", 0) == 0){
       std::string query = request.substr(14);
       std::istringstream iss(query);
@@ -105,6 +130,7 @@ int main(int argc, char* argv[])
       std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
       response = ossStr;
     }
+    // Handle 'search group' command
     else if (request.rfind("search group", 0) == 0){
       std::string query = request.substr(13);
       std::istringstream iss(query);
@@ -116,8 +142,8 @@ int main(int argc, char* argv[])
       std::string ossStr = oss.str();
       std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
       response = ossStr;
-
     }
+    // Handle 'display' command
     else if (request.rfind("display", 0) == 0){
       std::string query = request.substr(8);
       std::istringstream iss(query);
@@ -131,6 +157,7 @@ int main(int argc, char* argv[])
       std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
       response = ossStr;
     }
+    // Handle 'play' command
     else if (request.rfind("play ", 0) == 0) {
       std::string query = request.substr(5);
       std::istringstream iss(query);
@@ -142,9 +169,8 @@ int main(int argc, char* argv[])
       std::string ossStr = oss.str();
       std::replace(ossStr.begin(), ossStr.end(), '\n', ';');
       response = ossStr;
-
     }
-    
+    // Handle unknown command
     else{
       response = "Unknown command ... "
         "Available commands: ; "
@@ -158,17 +184,17 @@ int main(int argc, char* argv[])
            "8. play <name> ; "
            "9. quit"; 
     }
-    // return false would close the connecytion with the client
+
+    // Return true to keep the connection open with the client
     return true;
   });
 
-
-  // lance la boucle infinie du serveur
+  // Start the infinite loop of the server
   std::cout << "Starting Server on port " << PORT << std::endl;
 
   int status = server->run(PORT);
 
-  // en cas d'erreur
+  // If there is an error starting the server
   if (status < 0) {
     std::cerr << "Could not start Server on port " << PORT << std::endl;
     return 1;
@@ -176,4 +202,3 @@ int main(int argc, char* argv[])
 
   return 0;
 }
-

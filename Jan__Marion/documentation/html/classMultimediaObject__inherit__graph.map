@@ -1,0 +1,6 @@
+<map id="MultimediaObject" name="MultimediaObject">
+<area shape="rect" id="node1" title="Classe représentant un objet multimédia de base." alt="" coords="7,5,145,32"/>
+<area shape="rect" id="node2" href="$classPhoto.html" title="Classe représentant une photo avec des dimensions spécifiques." alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node3" href="$classVideo.html" title="Classe représentant une vidéo avec une durée spécifique." alt="" coords="88,80,147,107"/>
+<area shape="rect" id="node4" href="$classFilm.html" title="Classe représentant un film découpé en chapitres." alt="" coords="92,155,143,181"/>
+</map>

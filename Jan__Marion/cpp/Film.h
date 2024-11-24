@@ -4,13 +4,6 @@
 #include <string>
 #include "Video.h"
 
-/**
- * @file Film.h
- * @brief Déclaration de la classe Film.
- * 
- * La classe Film hérite de Video et représente un film découpé en chapitres.
- * Elle permet de manipuler les chapitres et de jouer le film en spécifiant les limites des chapitres.
- */
 class Film : public Video {
 private:
     int* chapters; /**< Tableau contenant les durées des chapitres en secondes. */

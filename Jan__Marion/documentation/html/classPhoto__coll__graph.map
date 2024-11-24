@@ -1,0 +1,4 @@
+<map id="Photo" name="Photo">
+<area shape="rect" id="node1" title="Classe représentant une photo avec des dimensions spécifiques." alt="" coords="45,80,104,107"/>
+<area shape="rect" id="node2" href="$classMultimediaObject.html" title="Classe représentant un objet multimédia de base." alt="" coords="5,5,144,32"/>
+</map>

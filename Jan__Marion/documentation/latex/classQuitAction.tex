@@ -1,0 +1,80 @@
+\hypertarget{classQuitAction}{}\doxysection{Quit\+Action Class Reference}
+\label{classQuitAction}\index{QuitAction@{QuitAction}}
+
+
+Represents an administrator in the system.  
+
+
+
+
+Inheritance diagram for Quit\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classQuitAction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Quit\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classQuitAction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQuitAction_aa7cf80666b3ed2dadd54a5e0fe936617}{Quit\+Action}} (String name)
+\item 
+void \mbox{\hyperlink{classQuitAction_a97131ce828e2a8ae9691d6fdecf753a0}{action\+Performed}} (Action\+Event e)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an administrator in the system. 
+
+Action to quit the application.
+
+This class implements an action that can be assigned to a button or menu item to close the application. When the action is triggered, the \mbox{\hyperlink{classQuitAction_a97131ce828e2a8ae9691d6fdecf753a0}{action\+Performed}} method is called, which terminates the program. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQuitAction_aa7cf80666b3ed2dadd54a5e0fe936617}\label{classQuitAction_aa7cf80666b3ed2dadd54a5e0fe936617}} 
+\index{QuitAction@{QuitAction}!QuitAction@{QuitAction}}
+\index{QuitAction@{QuitAction}!QuitAction@{QuitAction}}
+\doxysubsubsection{\texorpdfstring{QuitAction()}{QuitAction()}}
+{\footnotesize\ttfamily Quit\+Action.\+Quit\+Action (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for the \mbox{\hyperlink{classQuitAction}{Quit\+Action}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the action. This will be displayed on buttons or menu items that use this action. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQuitAction_a97131ce828e2a8ae9691d6fdecf753a0}\label{classQuitAction_a97131ce828e2a8ae9691d6fdecf753a0}} 
+\index{QuitAction@{QuitAction}!actionPerformed@{actionPerformed}}
+\index{actionPerformed@{actionPerformed}!QuitAction@{QuitAction}}
+\doxysubsubsection{\texorpdfstring{actionPerformed()}{actionPerformed()}}
+{\footnotesize\ttfamily void Quit\+Action.\+action\+Performed (\begin{DoxyParamCaption}\item[{Action\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs the action to quit the application.
+
+When triggered, this method calls \mbox{\hyperlink{}{System\#exit}} with a status code of 0, terminating the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The action event triggered when the action is performed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+swing/\mbox{\hyperlink{QuitAction_8java}{Quit\+Action.\+java}}\end{DoxyCompactItemize}
