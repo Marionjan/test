@@ -1,0 +1,13 @@
+<map id="cpp/MultimediaObject.h" name="cpp/MultimediaObject.h">
+<area shape="rect" id="node1" title="Déclaration de la classe MultimediaObject." alt="" coords="330,5,507,32"/>
+<area shape="rect" id="node2" href="$Administrator_8cpp.html" title="Implémente la classe Administrator pour gérer les objets multimédias et les groupes." alt="" coords="73,304,237,331"/>
+<area shape="rect" id="node3" href="$Administrator_8h.html" title="Déclaration de la classe Administrator." alt="" coords="225,229,375,256"/>
+<area shape="rect" id="node5" href="$Group_8cpp.html" title="Définition des méthodes de la classe Group." alt="" coords="652,229,767,256"/>
+<area shape="rect" id="node6" href="$Group_8h.html" title="Déclaration de la classe Group." alt="" coords="551,155,651,181"/>
+<area shape="rect" id="node7" href="$MultimediaObject_8cpp.html" title="Implémentation des méthodes de la classe MultimediaObject." alt="" coords="727,80,919,107"/>
+<area shape="rect" id="node8" href="$Photo_8h.html" title="Déclaration et implémentation de la classe Photo." alt="" coords="369,155,468,181"/>
+<area shape="rect" id="node9" href="$Video_8h.html" title="Déclaration et implémentation de la classe Video." alt="" coords="196,80,295,107"/>
+<area shape="rect" id="node4" href="$server_8cpp.html" title="Implementation of the TCP server that handles multimedia objects and groups." alt="" coords="405,304,521,331"/>
+<area shape="rect" id="node10" href="$Film_8h.html" title="Déclaration de la classe Film." alt="" coords="143,155,233,181"/>
+<area shape="rect" id="node11" href="$Film_8cpp.html" title="Définition des méthodes de la classe Film." alt="" coords="47,229,151,256"/>
+</map>

@@ -1,0 +1,224 @@
+\hypertarget{classMultimediaObject}{}\doxysection{Multimedia\+Object Class Reference}
+\label{classMultimediaObject}\index{MultimediaObject@{MultimediaObject}}
+
+
+Classe représentant un objet multimédia de base.  
+
+
+
+
+{\ttfamily \#include $<$Multimedia\+Object.\+h$>$}
+
+
+
+Inheritance diagram for Multimedia\+Object\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classMultimediaObject__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}{Multimedia\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMultimediaObject_a3250ec0a54b3a25bdc623695d776c75f}{Multimedia\+Object}} (std\+::string name, std\+::string pathname)
+\begin{DoxyCompactList}\small\item\em Constructeur avec paramètres. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMultimediaObject_ae7f09f13f345d904b1a690e98ef77ce8}{$\sim$\+Multimedia\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMultimediaObject_ad7c300b48e751175b41090400f2c2e75}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Obtient le nom de l\textquotesingle{}objet multimédia. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMultimediaObject_a69684dfef7cd8c7935ce3cde2afc755a}{get\+Pathname}} () const
+\begin{DoxyCompactList}\small\item\em Obtient le chemin d\textquotesingle{}accès de l\textquotesingle{}objet multimédia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_a7b4bcb6f7193623a9ced96bb7597e685}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Définit le nom de l\textquotesingle{}objet multimédia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_af80757438c4da9ce3ae705082f5a1ace}{set\+Pathname}} (std\+::string pathname)
+\begin{DoxyCompactList}\small\item\em Définit le chemin d\textquotesingle{}accès de l\textquotesingle{}objet multimédia. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMultimediaObject_af1d20328871ded2784b54d6ae512de5c}{write\+To\+File}} (std\+::ofstream \&out) const
+\begin{DoxyCompactList}\small\item\em Écrit les informations de l\textquotesingle{}objet dans un fichier. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMultimediaObject_a385f4b98a4a7d9d0b7ff717d682ee16d}{display}} (std\+::ostream \&stream) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations de l\textquotesingle{}objet dans un flux de sortie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant un objet multimédia de base. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}\label{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}} 
+\index{MultimediaObject@{MultimediaObject}!MultimediaObject@{MultimediaObject}}
+\index{MultimediaObject@{MultimediaObject}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{MultimediaObject()}{MultimediaObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Multimedia\+Object\+::\+Multimedia\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut. 
+
+Initialise l\textquotesingle{}objet avec des valeurs par défaut. \mbox{\Hypertarget{classMultimediaObject_a3250ec0a54b3a25bdc623695d776c75f}\label{classMultimediaObject_a3250ec0a54b3a25bdc623695d776c75f}} 
+\index{MultimediaObject@{MultimediaObject}!MultimediaObject@{MultimediaObject}}
+\index{MultimediaObject@{MultimediaObject}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{MultimediaObject()}{MultimediaObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Multimedia\+Object\+::\+Multimedia\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{pathname }\end{DoxyParamCaption})}
+
+
+
+Constructeur avec paramètres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}objet multimédia. \\
+\hline
+{\em pathname} & Chemin d\textquotesingle{}accès du fichier multimédia.\\
+\hline
+\end{DoxyParams}
+Initialise l\textquotesingle{}objet avec un nom et un chemin d\textquotesingle{}accès donnés.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom de l\textquotesingle{}objet. \\
+\hline
+{\em pathname} & Chemin d\textquotesingle{}accès du fichier. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMultimediaObject_ae7f09f13f345d904b1a690e98ef77ce8}\label{classMultimediaObject_ae7f09f13f345d904b1a690e98ef77ce8}} 
+\index{MultimediaObject@{MultimediaObject}!````~MultimediaObject@{$\sim$MultimediaObject}}
+\index{````~MultimediaObject@{$\sim$MultimediaObject}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$MultimediaObject()}{~MultimediaObject()}}
+{\footnotesize\ttfamily Multimedia\+Object\+::$\sim$\+Multimedia\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructeur. 
+
+Affiche un message indiquant la destruction de l\textquotesingle{}objet. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMultimediaObject_a385f4b98a4a7d9d0b7ff717d682ee16d}\label{classMultimediaObject_a385f4b98a4a7d9d0b7ff717d682ee16d}} 
+\index{MultimediaObject@{MultimediaObject}!display@{display}}
+\index{display@{display}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Multimedia\+Object\+::display (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Affiche les informations de l\textquotesingle{}objet dans un flux de sortie. 
+
+Affiche les informations de l\textquotesingle{}objet dans un flux.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Flux dans lequel afficher les informations.\\
+\hline
+\end{DoxyParams}
+Les informations affichées incluent le nom et le chemin d\textquotesingle{}accès.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Flux de sortie (e.\+g., {\ttfamily std\+::cout}). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVideo_aea4ab3915c4d8093aee54f1c8ee94a4a}{Video}}, \mbox{\hyperlink{classPhoto_aec118f05711d4cb7d8cd683bc402eb0f}{Photo}}, and \mbox{\hyperlink{classFilm_a7189602a3f76817012b660dbbe2a3582}{Film}}.
+
+\mbox{\Hypertarget{classMultimediaObject_ad7c300b48e751175b41090400f2c2e75}\label{classMultimediaObject_ad7c300b48e751175b41090400f2c2e75}} 
+\index{MultimediaObject@{MultimediaObject}!getName@{getName}}
+\index{getName@{getName}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Multimedia\+Object\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient le nom de l\textquotesingle{}objet multimédia. 
+
+Obtient le nom de l\textquotesingle{}objet.
+
+\begin{DoxyReturn}{Returns}
+Le nom de l\textquotesingle{}objet.
+
+Le nom actuel de l\textquotesingle{}objet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMultimediaObject_a69684dfef7cd8c7935ce3cde2afc755a}\label{classMultimediaObject_a69684dfef7cd8c7935ce3cde2afc755a}} 
+\index{MultimediaObject@{MultimediaObject}!getPathname@{getPathname}}
+\index{getPathname@{getPathname}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{getPathname()}{getPathname()}}
+{\footnotesize\ttfamily std\+::string Multimedia\+Object\+::get\+Pathname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient le chemin d\textquotesingle{}accès de l\textquotesingle{}objet multimédia. 
+
+Obtient le chemin d\textquotesingle{}accès du fichier.
+
+\begin{DoxyReturn}{Returns}
+Le chemin d\textquotesingle{}accès du fichier.
+
+Le chemin d\textquotesingle{}accès actuel. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMultimediaObject_a7b4bcb6f7193623a9ced96bb7597e685}\label{classMultimediaObject_a7b4bcb6f7193623a9ced96bb7597e685}} 
+\index{MultimediaObject@{MultimediaObject}!setName@{setName}}
+\index{setName@{setName}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Multimedia\+Object\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Définit le nom de l\textquotesingle{}objet multimédia. 
+
+Définit le nom de l\textquotesingle{}objet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nouveau nom de l\textquotesingle{}objet. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMultimediaObject_af80757438c4da9ce3ae705082f5a1ace}\label{classMultimediaObject_af80757438c4da9ce3ae705082f5a1ace}} 
+\index{MultimediaObject@{MultimediaObject}!setPathname@{setPathname}}
+\index{setPathname@{setPathname}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{setPathname()}{setPathname()}}
+{\footnotesize\ttfamily void Multimedia\+Object\+::set\+Pathname (\begin{DoxyParamCaption}\item[{std\+::string}]{pathname }\end{DoxyParamCaption})}
+
+
+
+Définit le chemin d\textquotesingle{}accès de l\textquotesingle{}objet multimédia. 
+
+Définit le chemin d\textquotesingle{}accès de l\textquotesingle{}objet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pathname} & Le nouveau chemin d\textquotesingle{}accès. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMultimediaObject_af1d20328871ded2784b54d6ae512de5c}\label{classMultimediaObject_af1d20328871ded2784b54d6ae512de5c}} 
+\index{MultimediaObject@{MultimediaObject}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!MultimediaObject@{MultimediaObject}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void Multimedia\+Object\+::write\+To\+File (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Écrit les informations de l\textquotesingle{}objet dans un fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Flux de sortie vers lequel écrire les informations.\\
+\hline
+\end{DoxyParams}
+Les informations écrites incluent le nom et le chemin d\textquotesingle{}accès de l\textquotesingle{}objet.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Flux de sortie. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVideo_ae23bffc1065943a37cbc8963ff6ef591}{Video}}, \mbox{\hyperlink{classPhoto_a50bd920438d2922a4780727de399df7c}{Photo}}, and \mbox{\hyperlink{classFilm_adb1402ba1f984185fc125bd8e6103e50}{Film}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{MultimediaObject_8h}{Multimedia\+Object.\+h}}\item 
+cpp/\mbox{\hyperlink{MultimediaObject_8cpp}{Multimedia\+Object.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{server_8cpp}{}\doxysection{cpp/server.cpp File Reference}
+\label{server_8cpp}\index{cpp/server.cpp@{cpp/server.cpp}}
+
+
+Implementation of the TCP server that handles multimedia objects and groups.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}tcpserver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Administrator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Film.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Photo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Group.\+h\char`\"{}}\newline
+Include dependency graph for server.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function that initializes and runs the TCP server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{server_8cpp_a11717c934f77ad5167dac5d28562d85a}\label{server_8cpp_a11717c934f77ad5167dac5d28562d85a}} 
+const int \mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}} = 3331
+\begin{DoxyCompactList}\small\item\em Port on which the server listens for incoming client connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the TCP server that handles multimedia objects and groups. 
+
+This file contains the server logic for handling requests from clients to manage multimedia objects such as photos, videos, and films, as well as groups of multimedia objects. The server listens on a TCP socket and processes various commands sent by the client, including object creation, search, and display.
+
+\begin{DoxyAuthor}{Author}
+Eric Lecolinet @contributors Marion Jan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016 
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+Telecom Paris\+Tech 
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{server.cpp@{server.cpp}!main@{main}}
+\index{main@{main}!server.cpp@{server.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function that initializes and runs the TCP server. 
+
+The main function creates a {\ttfamily \mbox{\hyperlink{classTCPServer}{TCPServer}}} instance and enters a loop where it waits for requests from clients. Upon receiving a request, the server parses the request and performs the corresponding action, such as creating multimedia objects (photo, video, film), searching for objects, displaying their details, or playing media.
+
+The server responds to each request with a corresponding response message, and the connection remains open until the client terminates it or an error occurs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command-\/line arguments. \\
+\hline
+{\em argv} & The array of command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the server runs successfully, 1 if an error occurs. 
+\end{DoxyReturn}
+$<$ The administrator that handles multimedia objects.

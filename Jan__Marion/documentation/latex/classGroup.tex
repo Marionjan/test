@@ -1,0 +1,169 @@
+\hypertarget{classGroup}{}\doxysection{Group Class Reference}
+\label{classGroup}\index{Group@{Group}}
+
+
+Classe représentant un groupe d\textquotesingle{}objets multimédias.  
+
+
+
+
+{\ttfamily \#include $<$Group.\+h$>$}
+
+
+
+Inheritance diagram for Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classGroup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classGroup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGroup_a10fc62dd92115677976891017a943e00}{Group}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructeur avec le nom du groupe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGroup_a0d36153a40aa498af5df9d5eb06106d8}{Group}} (const std\+::string \&name, std\+::list$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}} $>$$>$ objects)
+\begin{DoxyCompactList}\small\item\em Constructeur avec nom et liste d\textquotesingle{}objets. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGroup_aed00a22ff227ee2657ae44a5cbcedf7c}\label{classGroup_aed00a22ff227ee2657ae44a5cbcedf7c}} 
+\mbox{\hyperlink{classGroup_aed00a22ff227ee2657ae44a5cbcedf7c}{$\sim$\+Group}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. Vide la liste des objets lors de la destruction du groupe. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGroup_a2441b4048116108fe8f65bdf71d02494}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Récupère le nom du groupe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroup_ac201afc8b53cb9386ec13cdd1eb79a36}{display\+Group}} (std\+::ostream \&stream) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations des objets du groupe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroup_aa86ef7472f18d83f69d2c6b0615bc94e}{play\+Group}} () const
+\begin{DoxyCompactList}\small\item\em Joue tous les objets du groupe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroup_a287f79f57fd22f7fef0131b7f60a42dd}{push\+\_\+back}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}} $>$ obj)
+\begin{DoxyCompactList}\small\item\em Ajoute un objet multimédia au groupe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant un groupe d\textquotesingle{}objets multimédias. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGroup_a10fc62dd92115677976891017a943e00}\label{classGroup_a10fc62dd92115677976891017a943e00}} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{Group()}{Group()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Group\+::\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructeur avec le nom du groupe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du groupe. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroup_a0d36153a40aa498af5df9d5eb06106d8}\label{classGroup_a0d36153a40aa498af5df9d5eb06106d8}} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{Group()}{Group()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Group\+::\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::list$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}} $>$$>$}]{objects }\end{DoxyParamCaption})}
+
+
+
+Constructeur avec nom et liste d\textquotesingle{}objets. 
+
+Constructeur avec une liste d\textquotesingle{}objets multimédias.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du groupe. \\
+\hline
+{\em objects} & Liste des objets multimédias.\\
+\hline
+\end{DoxyParams}
+Initialise le groupe avec un nom et une liste d\textquotesingle{}objets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nom du groupe. \\
+\hline
+{\em objects} & Liste des objets multimédias. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGroup_ac201afc8b53cb9386ec13cdd1eb79a36}\label{classGroup_ac201afc8b53cb9386ec13cdd1eb79a36}} 
+\index{Group@{Group}!displayGroup@{displayGroup}}
+\index{displayGroup@{displayGroup}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{displayGroup()}{displayGroup()}}
+{\footnotesize\ttfamily void Group\+::display\+Group (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption}) const}
+
+
+
+Affiche les informations des objets du groupe. 
+
+Affiche les informations des objets multimédias dans le groupe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Flux dans lequel les informations seront affichées.\\
+\hline
+\end{DoxyParams}
+Si aucun objet n\textquotesingle{}est présent, un message approprié est affiché.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Flux de sortie pour afficher les informations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroup_a2441b4048116108fe8f65bdf71d02494}\label{classGroup_a2441b4048116108fe8f65bdf71d02494}} 
+\index{Group@{Group}!getName@{getName}}
+\index{getName@{getName}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Group\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Récupère le nom du groupe. 
+
+\begin{DoxyReturn}{Returns}
+Le nom du groupe. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGroup_aa86ef7472f18d83f69d2c6b0615bc94e}\label{classGroup_aa86ef7472f18d83f69d2c6b0615bc94e}} 
+\index{Group@{Group}!playGroup@{playGroup}}
+\index{playGroup@{playGroup}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{playGroup()}{playGroup()}}
+{\footnotesize\ttfamily void Group\+::play\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Joue tous les objets du groupe. 
+
+Cette méthode appelle la fonction {\ttfamily play} pour chaque objet du groupe. \mbox{\Hypertarget{classGroup_a287f79f57fd22f7fef0131b7f60a42dd}\label{classGroup_a287f79f57fd22f7fef0131b7f60a42dd}} 
+\index{Group@{Group}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!Group@{Group}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily void Group\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}} $>$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Ajoute un objet multimédia au groupe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & Un objet multimédia à ajouter au groupe.\\
+\hline
+{\em obj} & Un objet multimédia à ajouter. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cpp/\mbox{\hyperlink{Group_8h}{Group.\+h}}\item 
+cpp/\mbox{\hyperlink{Group_8cpp}{Group.\+cpp}}\end{DoxyCompactItemize}

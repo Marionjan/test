@@ -1,0 +1,7 @@
+<map id="cpp/Film.h" name="cpp/Film.h">
+<area shape="rect" id="node1" title="Déclaration de la classe Film." alt="" coords="196,5,285,32"/>
+<area shape="rect" id="node2" href="$Administrator_8cpp.html" title="Implémente la classe Administrator pour gérer les objets multimédias et les groupes." alt="" coords="5,155,169,181"/>
+<area shape="rect" id="node3" href="$Administrator_8h.html" title="Déclaration de la classe Administrator." alt="" coords="110,80,259,107"/>
+<area shape="rect" id="node4" href="$server_8cpp.html" title="Implementation of the TCP server that handles multimedia objects and groups." alt="" coords="223,155,339,181"/>
+<area shape="rect" id="node5" href="$Film_8cpp.html" title="Définition des méthodes de la classe Film." alt="" coords="334,80,438,107"/>
+</map>

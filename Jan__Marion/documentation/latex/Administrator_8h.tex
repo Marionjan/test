@@ -1,0 +1,64 @@
+\hypertarget{Administrator_8h}{}\doxysection{cpp/\+Administrator.h File Reference}
+\label{Administrator_8h}\index{cpp/Administrator.h@{cpp/Administrator.h}}
+
+
+Déclaration de la classe \mbox{\hyperlink{classAdministrator}{Administrator}}.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Multimedia\+Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Group.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Photo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Film.\+h\char`\"{}}\newline
+Include dependency graph for Administrator.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Administrator_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{Administrator_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAdministrator}{Administrator}}
+\begin{DoxyCompactList}\small\item\em Classe permettant de gérer les objets multimédias et les groupes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{Administrator_8h_a95c88ff3a20b5504671a98f870a6b793}{Multimedia\+Table}} = std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}} $>$ $>$
+\item 
+using \mbox{\hyperlink{Administrator_8h_a40b5e64a86d2d4394bc4cd6c42addc63}{Group\+Table}} = std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGroup}{Group}} $>$ $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Déclaration de la classe \mbox{\hyperlink{classAdministrator}{Administrator}}. 
+
+Cette classe gère des objets multimédias (\mbox{\hyperlink{classPhoto}{Photo}}, Vidéo, \mbox{\hyperlink{classFilm}{Film}}) et des groupes d\textquotesingle{}objets. Elle permet de créer, rechercher, afficher et manipuler ces entités. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{Administrator_8h_a40b5e64a86d2d4394bc4cd6c42addc63}\label{Administrator_8h_a40b5e64a86d2d4394bc4cd6c42addc63}} 
+\index{Administrator.h@{Administrator.h}!GroupTable@{GroupTable}}
+\index{GroupTable@{GroupTable}!Administrator.h@{Administrator.h}}
+\doxysubsubsection{\texorpdfstring{GroupTable}{GroupTable}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{Administrator_8h_a40b5e64a86d2d4394bc4cd6c42addc63}{Group\+Table}} =  std\+::map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classGroup}{Group}}$>$ $>$}
+
+Alias pour une table contenant des groupes d\textquotesingle{}objets multimédias. \mbox{\Hypertarget{Administrator_8h_a95c88ff3a20b5504671a98f870a6b793}\label{Administrator_8h_a95c88ff3a20b5504671a98f870a6b793}} 
+\index{Administrator.h@{Administrator.h}!MultimediaTable@{MultimediaTable}}
+\index{MultimediaTable@{MultimediaTable}!Administrator.h@{Administrator.h}}
+\doxysubsubsection{\texorpdfstring{MultimediaTable}{MultimediaTable}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{Administrator_8h_a95c88ff3a20b5504671a98f870a6b793}{Multimedia\+Table}} =  std\+::map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}}$>$ $>$}
+
+Alias pour une table contenant des objets multimédias. 
