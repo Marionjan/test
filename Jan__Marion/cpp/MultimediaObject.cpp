@@ -91,4 +91,8 @@ void MultimediaObject::display(std::ostream &stream) const {
     stream << "Pathname: " << this->getPathname() << std::endl;
 }
 
+void MultimediaObject::play() const {
+    std::cerr << "Playing " << this->getName() << " ..." << std::endl;
+}
+
 #endif // MULTIMEDIAOBJECT_CPP

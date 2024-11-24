@@ -93,7 +93,7 @@ public:
      * 
      * @param stream Flux dans lequel s'affiche le statut de l'affichage de l'objet.
      */
-    virtual void play(std::ostream &stream) const;
+    virtual void play() const;
 };
 
 #endif // MULTIMEDIAOBJECT_H
