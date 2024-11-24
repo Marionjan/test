@@ -87,6 +87,13 @@ public:
      * @param stream Flux dans lequel afficher les informations.
      */
     virtual void display(std::ostream &stream) const;
+
+    /**
+     * @brief Affiche l'objet sur le serveur.
+     * 
+     * @param stream Flux dans lequel s'affiche le statut de l'affichage de l'objet.
+     */
+    virtual void play(std::ostream &stream) const;
 };
 
 #endif // MULTIMEDIAOBJECT_H
